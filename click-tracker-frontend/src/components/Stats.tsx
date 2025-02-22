@@ -13,7 +13,7 @@ export default function Stats() {
   const [selectedService, setSelectedService] = useState("Qummit"); // Default to Qummit
 
   // WebSocket to get live data
-  const { lastMessage } = useWebSocket("ws://localhost:8000/ws", {
+  const { lastMessage } = useWebSocket("ws://136.228.158.126:3039/ws", {
     onOpen: () => console.log("✅ WebSocket Connected"),
     shouldReconnect: () => true,
   });

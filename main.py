@@ -22,7 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
+redis_client = redis.Redis(host='136.228.158.126', port=3041, db=0, decode_responses=True)
 
 # Clear existing country data on startup
 redis_client.delete("countries")
@@ -147,4 +147,4 @@ async def websocket_endpoint(websocket: WebSocket):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=3039)

@@ -15,7 +15,7 @@ export default function PageTracker({ children, pageName }: PageTrackerProps) {
   useEffect(() => {
     const startTime = Date.now();
 
-    fetch("http://localhost:8000/track/pageview", {
+    fetch("http://136.228.158.126:3039/track/pageview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ page: pageName }),
@@ -40,7 +40,7 @@ export default function PageTracker({ children, pageName }: PageTrackerProps) {
 
         const browserInfo = navigator.userAgent;
 
-        return fetch("http://localhost:8000/login", {
+        return fetch("http://136.228.158.126:3039/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export default function PageTracker({ children, pageName }: PageTrackerProps) {
 
     return () => {
       const timeSpent = Math.round((Date.now() - startTime) / 1000);
-      fetch("http://localhost:8000/track/time", {
+      fetch("http://136.228.158.126:3039/track/time", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ page: pageName, timeSpent }),

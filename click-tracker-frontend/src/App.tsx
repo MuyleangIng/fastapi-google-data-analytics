@@ -7,9 +7,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-100 py-6 flex flex-col sm:py-12">
-        <Routes>
-          <Route path="/stats" element={<Stats />} />
-        </Routes>
+        <Stats />
       </div>
     </Router>
   )
